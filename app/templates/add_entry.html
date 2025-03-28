@@ -1,0 +1,80 @@
+{% extends "index.html" %} {% block title %} Pievienot jaunu filmu {% endblock
+%} {% block content %}
+
+<div class="text-center">
+  <h1>Pievienot jaunu filmu</h1>
+</div>
+
+<form method="POST">
+  <div class="mb-3">
+    <label class="form-label">Nosaukums</label>
+    <input name="title" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Iznākšanas gads</label>
+    <input name="year" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Klase</label>
+    <input name="rated" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Ilgums</label>
+    <input name="runtime" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Žanrs</label>
+    <input name="genre" class="form-control" />
+    <div class="form-text">
+      Iespējams pievienot vairākus žanrus tos atdalot ar komatu, pimēram: Crime,
+      Drama
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Režisors</label>
+    <input name="director" class="form-control" />
+    <div class="form-text">
+      Iespējams pievienot vairākus režisorus tos atdalot ar komatu, pimēram:
+      Stephen King, Frank Darabont
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Rakstnieks</label>
+    <input name="writer" class="form-control" />
+    <div class="form-text">
+      Iespējams pievienot vairākus rakstniekus tos atdalot ar komatu, pimēram:
+      Stephen King, Frank Darabont
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Aktieri</label>
+    <input name="actors" class="form-control" />
+    <div class="form-text">
+      Iespējams pievienot vairākus aktierus tos atdalot ar komatu, pimēram: Tim
+      Robbins, Morgan Freeman
+    </div>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Filmas apraksts</label>
+    <textarea name="plot" class="form-control"></textarea>
+  </div>
+  <div class="mb-3">
+    <label class="form-label">IMDB Reitings</label>
+    <input name="imdbRating" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Tips</label>
+    <input name="type" class="form-control" />
+  </div>
+  <div class="mb-3">
+    <label class="form-label">Treileris</label>
+    <input name="trailer" class="form-control" />
+    <div class="form-text">Youtube URL</div>
+  </div>
+
+  <div class="text-end py-4">
+    <button type="submit" class="btn btn-primary">Pievienot</button>
+  </div>
+</form>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "index.html" %} {% block title %} Stabiņu diagramma {% endblock %} {%
+block content %}
+
+<div class="text-center py-4">
+  <h1>Stabiņu diagramma</h1>
+</div>
+
+<div class="text-center">
+  <img src="data:image/png;base64,{{ image }}" class="img-fluid" />
+
+  <p class="py-3">
+    Top 10 vecākās filmas ar vislabāko vērtējumu (filmas pirms 2000.gada)
+  </p>
+</div>
+
+{% endblock %}

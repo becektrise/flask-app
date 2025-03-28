@@ -1,0 +1,79 @@
+{% extends "index.html" %} {% block title %} Galvena lapa {% endblock %} {%
+block content %}
+
+<div class="text-center py-4">
+  <h1>Apraksts</h1>
+</div>
+
+<p>
+  Mājaslapā ir veidota ar Python, Flask, Pandas, matplotlib un Bootstrap. Kā
+  datu kopa izvēlēta top filmas, kuras iegūtas no brīvi pieejošas un brīvi
+  izmantojamas informācijas internetā. Datu repozitorijs
+  <a href="https://github.com/hjorturlarsen/IMDB-top-100" class="link-primary"
+    >IMDB top 100 movies</a
+  >. Dati ir iestatīti kā json objekti dažādos failos (1.json līdz 100.json),
+  kas atrodas direktorijā - data. Izmantojot šos datus tie tiek importēti
+  datubāzē, kas sastāv no tabulām:
+</p>
+
+<ul class="list-group">
+  <li class="list-group-item">movies - glabā visu informāciju par filmām</li>
+  <li class="list-group-item">genres - glabā visus žanrus</li>
+  <li class="list-group-item">people - glabā personas</li>
+  <li class="list-group-item">
+    trailers - atsevišķa tabula videoklipu (trailer) saitēm. Relācija ar movies
+    tabulu Many:1
+  </li>
+  <li class="list-group-item">
+    movie_genres - starptabula starp movies un genres. Tā satur visas saistības
+    starp žanriem un filmām. Relācja Many:Many
+  </li>
+  <li class="list-group-item">
+    movie_people - starptabula starp movies un people. Tā satur visas saistības
+    starp cilvēkiem un filmām. Atsevišķi glaba arī lomu (role). Relācja
+    Many:Many
+  </li>
+</ul>
+
+<p class="py-3">
+  Pēc idejas visus datus varētu glabāt arī vienā tabulā, bet lai padarītu
+  projektu interesantāku, tie ir sadalīti atsevišķās tabulās. Dati tiek
+  importēti datubāzē ar funkcijas palīdzību - importData(), kas iterē cauri
+  failiem, lasa json un vajadzīgos datus pievieno nepieciešamajās tabulās.
+</p>
+
+<p>Mājaslapas kopējā funkcionalitāte iekļauj:</p>
+
+<ul class="list-group">
+  <li class="list-group-item">
+    Datu lasīšanu un importēšanu datubāzē no failiem: 1.json - 100.json
+  </li>
+  <li class="list-group-item">
+    Datubāzes iztukšošanu - visu datubāzes datu izdzēšanu
+  </li>
+  <li class="list-group-item">
+    Filmu atspoguļošanu tabulā - datus atlasot no datubāzes, sagatabojot un
+    atspoguļojot
+  </li>
+  <li class="list-group-item">
+    Datu eksportēšana - datu atlasīšana no datubāzes, sagatavošanas un
+    eksportēšana uz failu - movies.csv
+  </li>
+  <li class="list-group-item">
+    Jaunas filmas pievienošanu - iespēja pievienot jaunu filmu datubazē manuāli
+    ievadot datus. Datu validēšana
+  </li>
+  <li class="list-group-item">
+    Filmas dzēšanu - iespēja dzēst konkrēto filmu pēc identifikatora
+  </li>
+  <li class="list-group-item">
+    Lietotāja saskarne veidota ar bootstrap 5. Paziņojumu atspoguļošana veicot
+    darbības. Template index.html ir izveidota tā, ka tā ir atkārtoti lietojama
+  </li>
+  <li class="list-group-item">
+    Izveidoti papildus četri dažādi skati ar histogrammu, stabiņu dagrammām un
+    sektoru diagrammu, kas atspoguļo dažādus datus
+  </li>
+</ul>
+
+{% endblock %}
